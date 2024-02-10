@@ -1,0 +1,25 @@
+.header {
+  height: 50px;
+  box-shadow: 2px 7px 5px 0 rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: 2px 7px 5px 0 rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: 2px 7px 5px 0 rgba(0, 0, 0, 0.38);
+}
+
+.nav {
+  display: flex;
+  column-gap: 20px;
+    padding: 15px;
+    margin-left: 50px;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+    font-weight: 500;
+}
+
+.active {
+    color: indianred;
+    text-decoration: underline;
+}
