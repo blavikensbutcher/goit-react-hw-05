@@ -11,7 +11,7 @@ export const FilmsList = () => {
         {array.map(item => {
           return (
             <li key={item.id}>
-              <Link to="/">{item.title}</Link>
+              <Link to={'/movies/' + item.id}>{item.title}</Link>
             </li>
           );
         })}
@@ -19,13 +19,16 @@ export const FilmsList = () => {
     );
   }
 
-  createMarkup(response);
-
   useEffect(() => {
     async function callFilms() {
-      const response = await getTrendingFilms();
-      setResponse(response);
+      try {
+        const response = await getTrendingFilms();
+        setResponse(response);
+      } catch (e) {
+        console.log(e);
+      }
     }
+
     callFilms();
   }, []);
 

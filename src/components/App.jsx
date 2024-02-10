@@ -1,9 +1,11 @@
 import './App.css';
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { FilmsList } from './FilmsList/FilmsList.jsx';
+import { FilmsList } from '../pages/FilmsList/FilmsList.jsx';
 import { Header } from './Header/Header.jsx';
-import { SearchMovies } from './SearchMovies/SearchMovies.jsx';
+import { SearchMovies } from '../pages/SearchMovies/SearchMovies.jsx';
+import { Film } from './Film/Film.jsx';
+import { NotFoundPage } from '../pages/NotFoundPage/NotFoundPage.jsx';
 
 // const home = React.lazy(() => import(''));
 
@@ -15,8 +17,8 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<FilmsList />} />
           <Route path="/movies/" element={<SearchMovies />} />
-          <Route path="/movies/:movieId" element={<div>Movie ID</div>} />
-          <Route path="*" element={<div>Ви заблукали :(</div>} />
+          <Route path="/movies/:movieId" element={<Film />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </>

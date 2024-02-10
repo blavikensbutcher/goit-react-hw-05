@@ -19,3 +19,13 @@ export async function getFilmByQuery(query) {
 
   return response.data.results;
 }
+
+export async function getFilmById(movie_id) {
+  const response = await axios.get(`https://api.themoviedb.org/3/movie/${movie_id}`, {
+    params: {
+      api_key: '5eadf0c870bae7d4b547fc5e7cef7655',
+    },
+  });
+
+  return response.data;
+}
