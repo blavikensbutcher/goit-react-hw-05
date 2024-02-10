@@ -1,15 +1,24 @@
 import { useEffect, useState } from 'react';
 import { getFilmByQuery } from '../../js/api.js';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { Button, TextField } from '@mui/material';
+import css from './SearchMovies.module.css';
 
 export const SearchMovies = () => {
-  const [inputValue, setInputValue] = useState('');
   const [response, setResponse] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
 
   function handleSubmit(event) {
     event.preventDefault();
-    setInputValue(event.target.search.value);
+    setSearchParams({ query: event.target.search.value });
     event.target.reset();
+  }
+
+  function handleChange(event) {
+    setSearchParams({
+      query: event.target.value,
+    });
   }
 
   function createMarkup(array) {
@@ -18,7 +27,9 @@ export const SearchMovies = () => {
         {array.map(item => {
           return (
             <li key={item.id}>
-              <Link to={'/movies/' + item.id}>{item.title}</Link>
+              <Link to={'/movies/' + item.id} state={location}>
+                {item.title}
+              </Link>
             </li>
           );
         })}
@@ -28,18 +39,32 @@ export const SearchMovies = () => {
 
   useEffect(() => {
     async function getFilm() {
-      const answer = await getFilmByQuery(inputValue);
+      const answer = await getFilmByQuery(searchParams.get('query'));
       setResponse(answer);
     }
     getFilm();
-  }, [inputValue]);
+  }, [searchParams]);
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="search">Search Movie</label>
-        <input placeholder="type here" name="search"></input>
-        <button type="submit">Search</button>
+      <form onSubmit={handleSubmit} className={css.form}>
+        <TextField
+          id="outlined-basic"
+          label="Put movie name here"
+          variant="outlined"
+          color={'success'}
+          name="search"
+          onChange={handleChange}
+          className={css.textField}
+        />
+        <Button
+          variant="outlined"
+          color={'success'}
+          type="submit"
+          style={{ marginLeft: 15, height: 56 }}
+        >
+          Search
+        </Button>
       </form>
 
       {createMarkup(response)}

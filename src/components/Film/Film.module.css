@@ -1,0 +1,57 @@
+.backlink {
+    margin-left: 10px;
+    margin-top: 15px;
+    width: 150px;
+    height: 100vh;
+    font-weight: 600;
+}
+
+.backlink:link, .backlink:visited {
+    background-color: rosybrown;
+    color: whitesmoke;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.backlink:hover, .backlink:active {
+    background-color: brown;
+}
+
+.image {
+    margin: 15px;
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.container {
+    display: flex;
+    background:#474747 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEUAAABUVlRMSkxMTkxUUlRERkTBhCBjAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAuRJREFUOI0Vk9uBxSAIRG3h5lFABAtQoYAIFhDA/ltZ919B55xJdrnmQfWmdg1A6J9FV9Z0ZCAl4QraLjaU/C5460hUZ8aT+lDzHnC50QVAM1HQRNc1UL9oLjUG2EVn6lmwdIicpUyAfn6S51klzSubZsMzPrwa5/x1dTFN9JZiIoc/IQ3qvngMHutKRTgv0HX5PJStPxwnRYFkxg8NJSOWGDoa8vi/m9oreD60QgK0NGytYKZCyeCXu0q7Y/1gtMY/1YehJbR1PH1a4yo8L6QzC9QdCe+xYTbapDfz6PNyRu0jzRlqKuMpL/hjz2qQ5z1m+rDbbLxE93lwdMr9biFJWyHDFct5Njl9tRF5SE7LjlvvwxmQhATO7/XPKKfx62r2oFvxjPDxapQDWyqs0LygVYfu7ir9kKmQ7iVVYAwr4CDDArztH+TUegvOnTaFWp6NHzAAe6TH+IhvjuhMi7PkyhsUtXR/pZT9XNynFgfuHdOpa7JwHUB+2hB6bJh20btxepwK7sDwKlfUhrdjdGwzbTuWbbPO94RDayNra+o8k/j8ZeCP64xOvGy+kdl9Z8Ug5TzWnjnmS3QJDn89vTseLE0fJY3oAlz+34JpXK/55yNPce4TlNco5JQQJX5TS82LFY3NnIm3Jb01zc+U0YMPa5uGV33zSEarwHfRrkf/xuRm5YFcxkaLF5N9pYsX915mTPrf0YoPWcCnc7z/drb7wFe3u3SrlCIyby1z7iDCM0lNJKv3+mtqRMP3Z9x2YyqmYDzvXPYc/W+m6OZC2WrKsktJ7vkYevA97f3X+r0TbyeyPlByu9D2/W3MmmJpbijfyBy8m8k7v2i/ox9HUobchOHcE5XbOnvj4UWSddxCEuHam5dp9LuLNEsaOYpjn99Gpr07Zi2KlN7tk713oW6D8q5nEJ19QaICMSzHLADA1F9xxCIbrTnZwDt3xLmh8y4vwwNp0PF43k0BDbqjn7a7Gr39AWKd+jtsNPjTAAAAAElFTkSuQmCC);
+}
+
+.genres {
+    display: flex;
+    column-gap: 10px;
+    color: whitesmoke;
+    width: 750px;
+}
+
+.title {
+    display: flex;
+    font-weight: 600;
+    color: ghostwhite;
+}
+
+.good {
+    color: greenyellow;
+}
+
+.neutral {
+    color: goldenrod;
+}
+
+.bad {
+    color: orangered;
+}

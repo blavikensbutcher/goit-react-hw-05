@@ -1,9 +1,10 @@
 import { getTrendingFilms } from '../../js/api.js';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const FilmsList = () => {
   const [response, setResponse] = useState([]);
+  const location = useLocation();
 
   function createMarkup(array) {
     return (
@@ -11,7 +12,9 @@ export const FilmsList = () => {
         {array.map(item => {
           return (
             <li key={item.id}>
-              <Link to={'/movies/' + item.id}>{item.title}</Link>
+              <Link to={'/movies/' + item.id} state={location}>
+                {item.title}
+              </Link>
             </li>
           );
         })}
