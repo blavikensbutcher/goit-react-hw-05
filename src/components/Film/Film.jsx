@@ -1,12 +1,13 @@
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getFilmById } from '../../js/api.js';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import css from './Film.module.css';
 
 export const Film = () => {
   const [response, setResponse] = useState({});
   const { movieId } = useParams();
   const location = useLocation();
+  const backLink = useRef(location.state);
   const BASE_IMG_URL = 'https://image.tmdb.org/t/p/w500/';
 
   ///////PERCENTAGE COLOR LOGIC/////////
@@ -24,7 +25,7 @@ export const Film = () => {
 
   return (
     <div className={css.container}>
-      <Link to={location.state} className={css.backlink}>
+      <Link to={backLink.current ?? '/'} className={css.backlink}>
         Back to all films
       </Link>
       <div>

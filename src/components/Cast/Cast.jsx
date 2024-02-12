@@ -15,7 +15,7 @@ export const Cast = () => {
       return response.cast;
     }
 
-    getReview().then(item => console.log(item));
+    getReview();
   }, [movieId]);
 
   return (
