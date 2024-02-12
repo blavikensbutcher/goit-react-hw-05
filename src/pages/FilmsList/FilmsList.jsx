@@ -2,7 +2,7 @@ import { getTrendingFilms } from '../../js/api.js';
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-export const FilmsList = () => {
+export default function FilmsList() {
   const [response, setResponse] = useState([]);
   const location = useLocation();
 
@@ -41,4 +41,4 @@ export const FilmsList = () => {
       {createMarkup(response)}
     </>
   );
-};
+}

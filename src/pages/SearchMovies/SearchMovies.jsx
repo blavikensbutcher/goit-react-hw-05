@@ -4,7 +4,7 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { Button, TextField } from '@mui/material';
 import css from './SearchMovies.module.css';
 
-export const SearchMovies = () => {
+export default function SearchMovies() {
   const [response, setResponse] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
@@ -70,4 +70,4 @@ export const SearchMovies = () => {
       {createMarkup(response)}
     </>
   );
-};
+}
