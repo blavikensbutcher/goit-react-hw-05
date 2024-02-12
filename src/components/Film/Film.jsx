@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getFilmById } from '../../js/api.js';
 import { useEffect, useState } from 'react';
 import css from './Film.module.css';
@@ -53,6 +53,15 @@ export const Film = () => {
           {response.genres &&
             response.genres.map(genre => <span key={genre.id}>{genre.name}</span>)}
         </p>
+        <ul>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
+          <li>
+            <Link to="cast">Cast</Link>
+          </li>
+        </ul>
+        <Outlet />
       </div>
     </div>
   );
